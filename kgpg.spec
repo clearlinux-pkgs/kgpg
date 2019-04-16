@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xDBD2CE893E2D1C87 (cfeck@kde.org)
 #
 Name     : kgpg
-Version  : 18.12.2
-Release  : 1
-URL      : https://download.kde.org/stable/applications/18.12.2/src/kgpg-18.12.2.tar.xz
-Source0  : https://download.kde.org/stable/applications/18.12.2/src/kgpg-18.12.2.tar.xz
-Source99 : https://download.kde.org/stable/applications/18.12.2/src/kgpg-18.12.2.tar.xz.sig
+Version  : 18.12.3
+Release  : 2
+URL      : https://download.kde.org/stable/applications/18.12.3/src/kgpg-18.12.3.tar.xz
+Source0  : https://download.kde.org/stable/applications/18.12.3/src/kgpg-18.12.3.tar.xz
+Source99 : https://download.kde.org/stable/applications/18.12.3/src/kgpg-18.12.3.tar.xz.sig
 Summary  : A GnuPG frontend
 Group    : Development/Tools
 License  : GPL-2.0
@@ -70,14 +70,14 @@ locales components for the kgpg package.
 
 
 %prep
-%setup -q -n kgpg-18.12.2
+%setup -q -n kgpg-18.12.3
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1555331551
+export SOURCE_DATE_EPOCH=1555408659
 mkdir -p clr-build
 pushd clr-build
 %cmake ..
@@ -85,7 +85,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1555331551
+export SOURCE_DATE_EPOCH=1555408659
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kgpg
 cp COPYING %{buildroot}/usr/share/package-licenses/kgpg/COPYING
