@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xDBD2CE893E2D1C87 (cfeck@kde.org)
 #
 Name     : kgpg
-Version  : 20.04.2
-Release  : 18
-URL      : https://download.kde.org/stable/release-service/20.04.2/src/kgpg-20.04.2.tar.xz
-Source0  : https://download.kde.org/stable/release-service/20.04.2/src/kgpg-20.04.2.tar.xz
-Source1  : https://download.kde.org/stable/release-service/20.04.2/src/kgpg-20.04.2.tar.xz.sig
+Version  : 20.08.0
+Release  : 19
+URL      : https://download.kde.org/stable/release-service/20.08.0/src/kgpg-20.08.0.tar.xz
+Source0  : https://download.kde.org/stable/release-service/20.08.0/src/kgpg-20.08.0.tar.xz
+Source1  : https://download.kde.org/stable/release-service/20.08.0/src/kgpg-20.08.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -72,15 +72,15 @@ locales components for the kgpg package.
 
 
 %prep
-%setup -q -n kgpg-20.04.2
-cd %{_builddir}/kgpg-20.04.2
+%setup -q -n kgpg-20.08.0
+cd %{_builddir}/kgpg-20.08.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1591908709
+export SOURCE_DATE_EPOCH=1597782927
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -92,14 +92,14 @@ export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 %cmake ..
-make  %{?_smp_mflags}  VERBOSE=1
+make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1591908709
+export SOURCE_DATE_EPOCH=1597782927
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kgpg
-cp %{_builddir}/kgpg-20.04.2/COPYING %{buildroot}/usr/share/package-licenses/kgpg/7c203dee3a03037da436df03c4b25b659c073976
+cp %{_builddir}/kgpg-20.08.0/COPYING %{buildroot}/usr/share/package-licenses/kgpg/7c203dee3a03037da436df03c4b25b659c073976
 pushd clr-build
 %make_install
 popd
@@ -207,9 +207,13 @@ popd
 /usr/share/doc/HTML/it/kgpg/index.docbook
 /usr/share/doc/HTML/it/kgpg/keygen.png
 /usr/share/doc/HTML/it/kgpg/keymanage.png
+/usr/share/doc/HTML/it/kgpg/keyprop.png
 /usr/share/doc/HTML/it/kgpg/keys.png
+/usr/share/doc/HTML/it/kgpg/keyserver-search.png
+/usr/share/doc/HTML/it/kgpg/keyserver.png
 /usr/share/doc/HTML/it/kgpg/kicker.png
 /usr/share/doc/HTML/it/kgpg/options.png
+/usr/share/doc/HTML/it/kgpg/select-secret-key.png
 /usr/share/doc/HTML/lt/kgpg/index.cache.bz2
 /usr/share/doc/HTML/lt/kgpg/index.docbook
 /usr/share/doc/HTML/nl/kgpg/index.cache.bz2
