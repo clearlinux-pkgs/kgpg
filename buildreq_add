@@ -1,2 +1,8 @@
 # This file contains additional build requirements that did not get
 # picked up automatically. One name per line, no whitespace.
+akonadi-contacts-dev
+akonadi-mime-dev
+kmbox-dev
+libkdepim-dev
+akonadi-dev
+grantleetheme-dev
